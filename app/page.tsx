@@ -1,9 +1,9 @@
 import About from "@/components/sections/About";
+import Contact from "@/components/sections/Contact";
 import Hero from "@/components/sections/Hero";
 import Location from "@/components/sections/Location";
 import Product from "@/components/sections/Product";
 import ValueProposition from "@/components/sections/ValueProposition";
-import React from "react";
 
 const Page = () => {
   return (
@@ -14,7 +14,7 @@ const Page = () => {
       <About />
       {/* Testimonials */}
       <Location />
-      {/* Contact / Lead Form */}
+      <Contact />
       {/* Footer */}
     </main>
   );
