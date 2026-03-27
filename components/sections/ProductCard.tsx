@@ -7,13 +7,13 @@ const ProductCard = ({ product }: { product: Product }) => {
       key={product.id}
       className="bg-white rounded-2xl shadow-sm hover:shadow-md transition overflow-hidden flex flex-col"
     >
-      <div className="w-full h-56 flex items-center justify-center bg-gray-50">
+      <div className="w-full h-64 flex items-center justify-center bg-gray-50">
         <Image
           src={product.image}
           alt={product.name}
           width={300}
-          height={200}
-          className="object-contain h-full w-auto"
+          height={300}
+          className="object-contain h-full w-auto hover:scale-105 transition duration-300"
         />
       </div>
 

@@ -45,7 +45,7 @@ const Hero = () => {
             <div className="mt-6">
               <Link
                 href="#products"
-                className="inline-block cursor-pointer px-6 py-3 bg-red-600 hover:bg-red-700 hover:text-white/60 transition rounded-md font-semibold"
+                className="inline-block cursor-pointer px-6 py-3 bg-red-600 hover:bg-red-700 hover:text-white/60 hover:-translate-y-2 transition rounded-md font-semibold"
               >
                 View Products
               </Link>
