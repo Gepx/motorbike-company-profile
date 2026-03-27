@@ -14,7 +14,7 @@ const Product = () => {
   const categories = [...new Set(products.map((p) => p.category))];
 
   return (
-    <section className="w-full h-screen py-10" id="products">
+    <section className="w-full min-h-screen py-10" id="products">
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col items-center justify-center">
           <h2 className="text-3xl font-bold">Explore Our Motorcycles</h2>

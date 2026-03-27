@@ -1,38 +1,5 @@
+import { navLinks } from "@/data/navLinks";
 import Image from "next/image";
-import React from "react";
-
-const navLinks = [
-  {
-    id: 1,
-    title: "Home",
-    href: "#home",
-  },
-  {
-    id: 2,
-    title: "Products",
-    href: "#products",
-  },
-  {
-    id: 3,
-    title: "Services",
-    href: "#services",
-  },
-  {
-    id: 4,
-    title: "Location",
-    href: "#location",
-  },
-  {
-    id: 5,
-    title: "About",
-    href: "#about",
-  },
-  {
-    id: 6,
-    title: "Contact",
-    href: "#contact",
-  },
-];
 
 const Nav = () => {
   return (
@@ -63,7 +30,7 @@ const Nav = () => {
           />
 
           <span className="text-md text-white font-semibold transition-colors duration-300 group-hover:text-black">
-            Chat Sekarang
+            Chat WhatsApp
           </span>
         </button>
       </div>
