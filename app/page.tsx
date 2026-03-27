@@ -1,3 +1,4 @@
+import About from "@/components/sections/About";
 import Hero from "@/components/sections/Hero";
 import Product from "@/components/sections/Product";
 import ValueProposition from "@/components/sections/ValueProposition";
@@ -9,7 +10,7 @@ const Page = () => {
       <Hero />
       <ValueProposition />
       <Product />
-      {/* About Us */}
+      <About />
       {/* Testimonials */}
       {/* Dealer Location */}
       {/* Contact / Lead Form */}
