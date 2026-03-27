@@ -29,7 +29,7 @@ const Location = () => {
                   <h3 className="font-bold text-gray-900 text-lg">
                     {location.title}
                   </h3>
-                  <p className="text-gray-500 text-sm leading-relaxed">
+                  <p className="whitespace-pre-line text-gray-500 text-sm leading-relaxed">
                     {location.description}
                   </p>
                 </div>
