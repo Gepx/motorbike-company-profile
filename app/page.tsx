@@ -15,7 +15,6 @@ const Page = () => {
       {/* Testimonials */}
       <Location />
       <Contact />
-      {/* Footer */}
     </main>
   );
 };

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Montserrat, Inter, Poppins } from "next/font/google";
 import "./globals.css";
 import Nav from "@/components/layouts/Nav";
+import Footer from "@/components/layouts/Footer";
 
 const poppins = Poppins({
   variable: "--font-poppins",
@@ -35,6 +36,7 @@ export default function RootLayout({
       <body className="min-h-full flex flex-col border-x-2">
         <Nav />
         {children}
+        <Footer />
       </body>
     </html>
   );
