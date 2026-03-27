@@ -18,7 +18,7 @@ const Hero = () => {
       <div className="absolute bottom-0 left-0 w-full h-40 bg-gradient-to-t from-white to-transparent" />
 
       <div className="absolute inset-0 flex items-center">
-        <div className="max-w-7xl mx-auto w-full">
+        <div className="max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8">
           <div className="max-w-xl text-white">
             {/* Heading */}
             <h1

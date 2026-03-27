@@ -4,7 +4,7 @@ import Image from "next/image";
 const Nav = () => {
   return (
     <nav className="absolute top-0 left-0 w-full z-50">
-      <div className="flex justify-between items-center py-6 max-w-7xl mx-auto">
+      <div className="flex justify-between items-center py-6 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div>
           {/* <Image src="/" alt="Logo" width={100} height={100} /> */}
           <span className="font-bold text-xl text-white">Logo</span>

@@ -14,9 +14,9 @@ const Product = () => {
   const categories = [...new Set(products.map((p) => p.category))];
 
   return (
-    <section className="w-full min-h-screen py-10" id="products">
-      <div className="max-w-7xl mx-auto">
-        <div className="flex flex-col items-center justify-center">
+    <section className="w-full min-h-screen pb-20 pt-10" id="products">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex flex-col items-center justify-center text-center">
           <h2 className="text-3xl font-bold">Explore Our Motorcycles</h2>
 
           <p className="mt-2 text-gray-500">
