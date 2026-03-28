@@ -3,6 +3,7 @@ import Contact from "@/components/sections/Contact";
 import Hero from "@/components/sections/Hero";
 import Location from "@/components/sections/Location";
 import Product from "@/components/sections/Product";
+import Testimonial from "@/components/sections/Testimonial";
 import ValueProposition from "@/components/sections/ValueProposition";
 
 const Page = () => {
@@ -12,7 +13,7 @@ const Page = () => {
       <ValueProposition />
       <Product />
       <About />
-      {/* Testimonials */}
+      <Testimonial />
       <Location />
       <Contact />
     </main>
