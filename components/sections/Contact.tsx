@@ -30,6 +30,7 @@ const Contact = () => {
               src="/assets/images/contact.png"
               alt="Contact"
               fill
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 50vw"
               className="object-cover"
             />
 
