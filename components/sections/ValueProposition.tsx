@@ -4,7 +4,10 @@ import ValuePButton from "./ValuePButton";
 
 const ValueProposition = () => {
   return (
-    <section className="relative w-full min-h-screen py-20 overflow-hidden">
+    <section
+      className="relative w-full min-h-screen py-20 overflow-hidden"
+      id="value-proposition"
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
         <div className="flex flex-col justify-center items-center">
           <div className="text-center mb-16 max-w-2xl mx-auto">

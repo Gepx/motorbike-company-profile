@@ -6,12 +6,12 @@ const Testimonial = () => {
 
   return (
     <section
-      className="relative w-full py-24 overflow-hidden"
+      className="relative w-full overflow-hidden pb-20 pt-10"
       id="testimonials"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Header - Adjusted for Light Mode */}
-        <div className="flex flex-col items-center justify-center text-center mb-16">
+        <div className="flex flex-col items-center justify-center text-center mb-10">
           <h2 className="text-4xl font-extrabold text-gray-900 tracking-tight">
             Loved by Riders
           </h2>
@@ -23,7 +23,7 @@ const Testimonial = () => {
       </div>
 
       {/* Marquee Container - Full Width */}
-      <div className="w-full flex flex-col gap-6 relative z-10 py-4">
+      <div className="w-full flex flex-col gap-6 relative z-10 py-2">
         {/* Row 1: Moves Left */}
         <div className="w-full inline-flex flex-nowrap overflow-hidden [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-128px),transparent_100%)]">
           <div className="flex gap-6 justify-start w-max animate-marquee pl-6 py-4">

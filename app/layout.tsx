@@ -3,6 +3,8 @@ import { Montserrat, Inter, Poppins } from "next/font/google";
 import "./globals.css";
 import Nav from "@/components/layouts/Nav";
 import Footer from "@/components/layouts/Footer";
+import { ArrowUp } from "lucide-react";
+import Link from "next/link";
 
 const poppins = Poppins({
   variable: "--font-poppins",
@@ -37,6 +39,17 @@ export default function RootLayout({
         <Nav />
         {children}
         <Footer />
+
+        <Link
+          href="#home"
+          aria-label="Scroll to top"
+          className="fixed bottom-8 right-8 z-50 p-3.5 bg-white border border-gray-100 rounded-full shadow-[0_8px_30px_rgb(0,0,0,0.12)] hover:shadow-[0_8px_30px_rgb(0,0,0,0.2)] hover:-translate-y-1 transition-all duration-300 flex items-center justify-center group"
+        >
+          <ArrowUp
+            className="text-gray-600 group-hover:text-red-600 transition-colors"
+            size={24}
+          />
+        </Link>
       </body>
     </html>
   );

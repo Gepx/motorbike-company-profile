@@ -4,10 +4,10 @@ import Image from "next/image";
 
 const About = () => {
   return (
-    <section className="w-full min-h-screen pb-20 pt-10">
+    <section className="w-full min-h-screen pb-20 pt-10" id="about">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="flex flex-col items-center justify-center text-center mb-16">
+        <div className="flex flex-col items-center justify-center text-center mb-10">
           <h2 className="text-3xl font-bold text-gray-900 tracking-tight">
             About Us
           </h2>
