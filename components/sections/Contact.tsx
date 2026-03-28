@@ -1,13 +1,21 @@
-import { Send } from "lucide-react";
+"use client";
+
 import Image from "next/image";
 import ContactForm from "./ContactForm";
+import { motion } from "motion/react";
 
 const Contact = () => {
   return (
     <section className="w-full min-h-screen pb-20 pt-10" id="contact">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="flex flex-col items-center justify-center text-center mb-16">
+        <motion.div
+          className="flex flex-col items-center justify-center text-center mb-16"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
           <h2 className="text-3xl font-extrabold text-gray-900 tracking-tight">
             Contact Us
           </h2>
@@ -15,17 +23,29 @@ const Contact = () => {
             Visit our showroom and explore our motorcycles in person or drop us
             a message below.
           </p>
-        </div>
+        </motion.div>
 
         {/* Content Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-stretch max-w-6xl mx-auto">
           {/* Left Content: The Form */}
-          <div className="bg-white rounded-[2rem] p-8 md:p-10 shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-gray-100 flex flex-col justify-center">
+          <motion.div
+            className="bg-white rounded-[2rem] p-8 md:p-10 shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-gray-100 flex flex-col justify-center"
+            initial={{ opacity: 0, x: -40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, ease: "easeOut" as const }}
+          >
             <ContactForm />
-          </div>
+          </motion.div>
 
           {/* Right Content: The Image */}
-          <div className="relative w-full h-full min-h-[300px] lg:min-h-[500px] bg-white rounded-[2rem] shadow-[0_8px_30px_rgb(0,0,0,0.04)] overflow-hidden border border-gray-100 group">
+          <motion.div
+            className="relative w-full h-full min-h-[300px] lg:min-h-[500px] bg-white rounded-[2rem] shadow-[0_8px_30px_rgb(0,0,0,0.04)] overflow-hidden border border-gray-100 group"
+            initial={{ opacity: 0, x: 40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, ease: "easeOut" as const, delay: 0.15 }}
+          >
             <Image
               src="/assets/images/contact.png"
               alt="Contact"
@@ -42,7 +62,7 @@ const Contact = () => {
                 Our customer service team usually responds within 24 hours.
               </p>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

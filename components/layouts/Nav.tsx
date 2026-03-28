@@ -12,6 +12,15 @@ const Nav = () => {
   const [isClicked, setIsClicked] = useState(false);
 
   useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  useEffect(() => {
     if (isClicked) {
       document.body.style.overflow = "hidden";
     } else {
@@ -24,11 +33,25 @@ const Nav = () => {
   }, [isClicked]);
 
   return (
-    <nav className="absolute top-0 left-0 w-full z-50">
-      <div className="flex justify-between items-center py-6 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <nav
+      className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${
+        isScrolled
+          ? "bg-white/90 backdrop-blur-md shadow-[0_2px_20px_rgb(0,0,0,0.08)]"
+          : "bg-transparent"
+      }`}
+    >
+      <div
+        className={`flex justify-between items-center max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 transition-all duration-500 ${
+          isScrolled ? "py-4" : "py-6"
+        }`}
+      >
         <div className="relative z-50">
           {/* <Image src="/" alt="Logo" width={100} height={100} /> */}
-          <span className="font-bold text-2xl text-white tracking-wide">
+          <span
+            className={`font-bold text-2xl tracking-wide transition-colors duration-500 ${
+              isScrolled ? "text-gray-900" : "text-white"
+            }`}
+          >
             Logo
           </span>
         </div>
@@ -38,14 +61,24 @@ const Nav = () => {
             <Link
               key={link.id}
               href={link.href}
-              className="relative cursor-pointer text-white after:content-[''] after:absolute after:left-1/2 after:-translate-x-1/2 after:-bottom-1.5 after:h-[2px] after:w-0 after:bg-white after:transition-all after:duration-300 hover:after:w-full"
+              className={`relative cursor-pointer transition-colors duration-500 after:content-[''] after:absolute after:left-1/2 after:-translate-x-1/2 after:-bottom-1.5 after:h-[2px] after:w-0 after:transition-all after:duration-300 hover:after:w-full ${
+                isScrolled
+                  ? "text-gray-700 hover:text-red-600 after:bg-red-600"
+                  : "text-white after:bg-white"
+              }`}
             >
               {link.title}
             </Link>
           ))}
         </ul>
 
-        <button className="hidden md:flex group items-center gap-2 px-6 py-2.5 rounded-full cursor-pointer border border-white/40 hover:bg-white transition-all duration-300">
+        <button
+          className={`hidden md:flex group items-center gap-2 px-6 py-2.5 rounded-full cursor-pointer border transition-all duration-500 ${
+            isScrolled
+              ? "border-red-600 hover:bg-red-600"
+              : "border-white/40 hover:bg-white"
+          }`}
+        >
           <Image
             src="/assets/icons/whatsapp.svg"
             alt="WhatsApp"
@@ -53,14 +86,22 @@ const Nav = () => {
             height={24}
           />
 
-          <span className="text-sm text-white font-bold transition-colors duration-300 group-hover:text-black">
+          <span
+            className={`text-sm font-bold transition-colors duration-500 ${
+              isScrolled
+                ? "text-red-600 group-hover:text-white"
+                : "text-white group-hover:text-black"
+            }`}
+          >
             Chat WhatsApp
           </span>
         </button>
 
         {/* Mobile Menu Toggle Icon */}
         <button
-          className="md:hidden flex items-center justify-center text-white focus:outline-none"
+          className={`md:hidden flex items-center justify-center focus:outline-none transition-colors duration-500 ${
+            isScrolled ? "text-gray-900" : "text-white"
+          }`}
           onClick={() => setIsClicked(true)}
         >
           <Menu size={32} />

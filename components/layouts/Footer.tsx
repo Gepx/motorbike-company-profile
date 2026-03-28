@@ -1,22 +1,57 @@
+"use client";
+
 import { locationData } from "@/data/location";
 import { navLinks } from "@/data/navLinks";
 import { MapPin, MessageCircle } from "lucide-react";
 import Link from "next/link";
+import { motion } from "motion/react";
 
 const Footer = () => {
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+        delayChildren: 0.2,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.5, ease: "easeOut" as const },
+    },
+  };
+
   return (
     <footer className="w-full bg-[#cc141a] text-white pt-16 pb-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 mb-12">
-          <div className="flex flex-col items-start gap-4">
+        <motion.div
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 mb-12"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+        >
+          <motion.div
+            className="flex flex-col items-start gap-4"
+            variants={itemVariants}
+          >
             <h3 className="text-xl font-bold tracking-wide mb-2">Logo</h3>
             <p className="text-sm font-medium leading-relaxed text-white/90 pr-4">
               We are a leading automotive company in Indonesia, committed to
               providing high-quality motorcycles and excellent customer service.
             </p>
-          </div>
+          </motion.div>
 
-          <div className="flex md:justify-center">
+          <motion.div
+            className="flex md:justify-center"
+            variants={itemVariants}
+          >
             <div className="flex flex-col items-start">
               <h3 className="text-xl font-bold tracking-wide mb-6">
                 Navigator
@@ -33,20 +68,19 @@ const Footer = () => {
                 ))}
               </ul>
             </div>
-          </div>
+          </motion.div>
 
-          <div>
+          <motion.div variants={itemVariants}>
             <h3 className="text-xl font-bold tracking-wide mb-6">Address</h3>
-            {/* Used items-start so the icon aligns with the first line of text */}
             <div className="flex items-start gap-3">
               <MapPin size={20} className="shrink-0 mt-0.5 text-white" />
               <p className="text-sm font-medium text-white/90 leading-relaxed">
                 {locationData[0].description}
               </p>
             </div>
-          </div>
+          </motion.div>
 
-          <div>
+          <motion.div variants={itemVariants}>
             <h3 className="text-xl font-bold tracking-wide mb-6">Follow Us</h3>
             <div className="flex items-center gap-4">
               <button className="cursor-pointer p-2 -ml-2 rounded-full hover:bg-white/10 transition-colors flex items-center justify-center">
@@ -57,14 +91,20 @@ const Footer = () => {
                 />
               </button>
             </div>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
 
-        <div className="flex flex-col items-center justify-center text-center border-t border-white/80 pt-8">
+        <motion.div
+          className="flex flex-col items-center justify-center text-center border-t border-white/80 pt-8"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.5 }}
+        >
           <p className="text-sm font-medium text-white/90 tracking-wide">
             &copy; 2026 Honda Motor. All rights reserved.
           </p>
-        </div>
+        </motion.div>
       </div>
     </footer>
   );
